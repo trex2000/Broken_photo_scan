@@ -1,7 +1,9 @@
 #!/bin/bash
-SCAN_DIR=/mnt/500gb/Pictures
-CORRUPTED_FILES_DIR=/mnt/500gb/Pictures_corrupted
+SCAN_DIR=/path_to_image_folder
+CORRUPTED_FILES_DIR=/path_to_corrupted_images_folder
 LOG_FILE=/var/log/broken_pictures.log
+#do not modify below
+
 if grep -qs '/mnt/500gb' /proc/mounts; then
     echo "Drive is mounted."
 else
