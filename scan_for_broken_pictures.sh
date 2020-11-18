@@ -24,8 +24,7 @@ then
 fi
 
 #do not modify below
-#find $SCAN_DIR -name '*.jpg' | while read FILE; do
-find $SCAN_DIR -iregex '.*\.\(jpg\|gif\|png\|jpeg|dmg\)$' | while read FILE; do
+find $SCAN_DIR -iregex '.*\.\(jpg\|gif\|png\|jpeg\|dmg\)$' | while read FILE; do
     if ! identify "$FILE" &> /dev/null; then
         FILENAME=$(basename -- "$FILE")
         MOVE_PATH="${CORRUPTED_FILES_DIR}/$(date +"%m_%d_%y_%H_%M_%S")_${FILENAME}"
